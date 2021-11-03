@@ -1,4 +1,7 @@
-
+body {
+    padding-top: 50px;
+    z-index: 0;
+}
 /* LAYOUT */
 .row-header {
     margin: 0px auto;
@@ -26,10 +29,12 @@
     margin: 0px;
     color: #0f0f0f;
 }
-.body {
-    padding-top: 50px;
-    z-index: 0;
-}
 .navbar-dark {
     background-color: #512DA8;
+}
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
 }
