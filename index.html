@@ -11,7 +11,7 @@
             <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
             <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
             <link rel="stylesheet" href="./css/styles.css">
-        <title>Ristorante Con Fusion</title>
+        <title>The Awesome Car Reseller</title>
     </head>
     <body>
         <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
@@ -19,18 +19,17 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                     <span class="navbar-toggler-icon" />
                 </button>
-                <a class="navbar-brand mr-auto" href="./index.html"><img src="./img/logo.png" height="30" width="41"></a>
+                <a class="navbar-brand mr-auto" href="./index.html"><img src="./img/car_white.png" height="30"></a>
                 <div class="collapse navbar-collapse" id="Navbar">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="index.html"><span class="fa fa-home fa-lg"></span> Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./cars.html"><span class="fa fa-car fa-lg"></span> Cars</a></li>
                         <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                     </ul>
                     <span class="navbar-text">
-                        <a data-toggle="modal" data-target="#loginModal">
-                            <span class="fa fa-sign-in"></span>
-                            Login
+                        <a data-toggle="modal" id="loginBtn">
+                            Administration&nbsp;
+                            <span class="fa fa-edit"></span>
                         </a>
                     </span>
                 </div>
@@ -41,7 +40,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Login</h4>
-                        <button type="button" class="close" data-dismiss="modal">
+                        <button type="button" class="close" id="loginDismiss">
                             &times;
                         </button>
                     </div>
@@ -65,7 +64,7 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" id="loginCancel">Cancel</button>
                                 <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
                             </div>
                         </form>
@@ -73,65 +72,44 @@
                 </div>
             </div>
         </div>
-        <div id="reserveModal" class="modal fade" role="dialog">
+        <div id="bookModal" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg" role="content">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Reserve a Table</h4>
-                        <button type="button" class="close" data-dismiss="modal">
+                        <h4 class="modal-title">Book an appointment</h4>
+                        <button type="button" class="close" id="bookDismiss">
                             &times;
                         </button>
                     </div>   
                     <div class="modal-body">
                         <form>
                             <div class="form-group row">
-                                <label for="amountGuests" class="col-12 col-md-2 col-form-label">Number of Guests</label>
-                                <div class="col-12 col-md-10">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="amountGuests" id="amountGuests1" value="option1">
-                                        <label class="form-check-label mr-3" for="amountGuests1">1</label>
-                                        <input class="form-check-input" type="radio" name="amountGuests" id="amountGuests2" value="option2">
-                                        <label class="form-check-label mr-3" for="amountGuests2">2</label>
-                                        <input class="form-check-input" type="radio" name="amountGuests" id="amountGuests3" value="option3">
-                                        <label class="form-check-label mr-3" for="amountGuests3">3</label>
-                                        <input class="form-check-input" type="radio" name="amountGuests" id="amountGuests4" value="option4">
-                                        <label class="form-check-label mr-3" for="amountGuests4">4</label>
-                                        <input class="form-check-input" type="radio" name="amountGuests" id="amountGuests5" value="option5">
-                                        <label class="form-check-label mr-3" for="amountGuests5">5</label>
-                                        <input class="form-check-input" type="radio" name="amountGuests" id="amountGuests6" value="option6">
-                                        <label class="form-check-label" for="amountGuests6">6</label>
-                                    </div>
-                                </div>
-                            </div>
-                           
-                            <div class="form-group row">
-                                <label for="section" class="col-12 col-md-2 col-form-label">Section</label>
-                                <div class="col-12 col-md-10">
-                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-success active">
-                                        <input type="radio" name="section" id="section1" checked> Non Smoking
-                                        </label>
-                                        <label class="btn btn-danger">
-                                        <input type="radio" name="section" id="section2"> Smoking
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            </form>
-                            <div class="form-group row">
-                                <label for="time" class="col-12 col-md-2 col-form-label">Date and Time</label>
-                                <div class="col-12 col-sm-6 col-md-4">
-                                    <input type="text" class="form-control" id="date" name="date" placeholder="Date"/>
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-4">
-                                    <input type="text" class="form-control" id="time" name="time" placeholder="Time"/>
+                                <label for="name" class="col-12 col-md-2 col-form-label">Name</label>
+                                <div class="col-12 col-sm-6 col-md-6">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name"/>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-12 offset-md-2 col-md-9">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-primary">Reserve</button>
+                                <label for="email" class="col-12 col-md-2 col-form-label">E-mail</label>
+                                <div class="col-12 col-sm-6 col-md-6">
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="E-mail"/>
                                 </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="phone" class="col-12 col-md-2 col-form-label">Phone</label>
+                                <div class="col-12 col-sm-6 col-md-6">
+                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone"/>
+                                </div>
+                            </div>
+                            <div class="form-group row calendar">
+                                <label for="date" class="col-12 col-md-2 col-form-label">Define a date:</label>
+                                <div class="col-12 col-sm-6 col-md-6">
+                                    <img class="calendar" src="./img/cal.png" alt="dummyCalForNow">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" id="bookCancel">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-sm ml-1">Send Request</button>        
                             </div>
                         </form>
                     </div>
@@ -142,47 +120,65 @@
             <div class="container">
                 <div class="row row-header">
                     <div class="col-12 col-sm-6">
-                        <h1>Ristorante con Fusion</h1>
-                        <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
+                        <h1 class="text-dark">The Awesome Car Reseller</h1>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <img src="./img/car.png" class="img-fluid header-img">
+                    </div>
+                </div>
+                <div class="row row-header">
+                    <div class="col-12 col-sm-6">
+                        <p class="text-dark">Makes your dream car come true!</p>
                     </div>
                     <div class="col-12 col-sm-3 align-self-center">
-                        <img src="./img/logo.png" class="img-fluid">
-                    </div>
-                    <div class="col-12 col-sm-3 align-self-center">
-                        <a class="btn btn-block btn-sm btn-warning"  data-toggle="modal" data-target="#reserveModal"> 
-                        Reserve Table</a>
+                        <a class="btn btn-block btn-sm btn-outline-dark" id="bookBtn"> 
+                            Book an appointment</a>
                     </div>
                 </div>
             </div>
         </header>
-        <div class="container">
+        <div class="container content">
             <div class="row row-content">
                 <div class="col">
                     <div id="mycarousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active">
-                                <img class="d-block img-fluid" src="./img/uthappizza.png" alt="uthappizza">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h2>Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-secondary">$ 4.99</span></h2>
-                                    <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
+                                <div class="row">
+                                    <div class="col-12 col-sm-6">
+                                        <img class="img-fluid" src="./img/car1.jpeg" alt="car1">
+                                    </div>
+                                    <div class="col-12 col-sm-6 pt-3 carousel-text">
+                                        <span class="badge badge-danger">SPECIAL EDITION</span> <span class="badge badge-pill badge-secondary"></span>
+                                        <h2 class="">Car of the week</h2>
+                                        <h2>$ 40.000</h2>
+                                    </div>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block img-fluid" src="./img/buffet.png" alt="Buffet">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h2>Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
-                                    <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+                                <div class="row">
+                                    <div class="col-12 col-sm-6">
+                                        <img class="img-fluid" src="./img/car2.jpeg" alt="car2">
+                                    </div>
+                                    <div class="col-12 col-sm-6 pt-3 carousel-text">
+                                        <span class="badge badge-danger">SPECIAL PRICE</span> <span class="badge badge-pill badge-secondary"></span>
+                                        <h2 class="">Car of the week</h2>
+                                        <h2>$ 10.000</h2>
+                                    </div>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block img-fluid" src="./img/alberto.png" alt="Alberto">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h2>Alberto Somayya</h2>
-                                    <h4>Executive Chef</h4>
-                                    <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+                                <div class="row">
+                                    <div class="col-12 col-sm-6">
+                                        <img class="img-fluid" src="./img/car1.jpeg" alt="car1">
+                                    </div>
+                                    <div class="col-12 col-sm-6 pt-3 carousel-text">
+                                        <span class="badge badge-danger">HIGHLIGHT</span> <span class="badge badge-pill badge-secondary"></span>
+                                        <h2 class="">Car of the week</h2>
+                                        <h2>$ 12.000</h2>
+                                    </div>
                                 </div>
                             </div>
-                            <ol class="carousel-indicators">
+                            <ol class="carousel-indicators d-xs-none">
                                 <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
                                 <li data-target="#mycarousel" data-slide-to="1"></li>
                                 <li data-target="#mycarousel" data-slide-to="2"></li>
@@ -199,74 +195,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row row-content align-items-center">
-                <div class="col-12 col-sm-4 order-sm-last col-md-3">
-                    <h3>Our Lipsmacking Culinary Creations</h3>
-                </div>
-                <div class="col col-sm order-sm-first col-md">
-                    <div class="media">
-                        <img src="./img/uthappizza.png" class="d-flex mr-3 align-self-center img-thumbnail" alt="Uthappizza">
-                        <div class="media-body">
-                            <h2 class="mt-0">Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-secondary">$ 4.99</span></h2>
-                            <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row row-content align-items-center">
-                <div class="col-12 col-sm-4 col-md-3">
-                    <h3>This Month's Promotions</h3>
-                </div>
-                <div class="col col-sm col-md">
-                    <div class="media">
-                        <div class="media-body">
-                            <h2>Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
-                            <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
-                        </div>
-                        <img src="./img/buffet.png" class="d-flex ml-3 align-self-center img-thumbnail" alt="Buffet">
-                    </div> 
-                </div>
-            </div>
-            <div class="row row-content align-items-center">
-                <div class="col-12 col-sm-4 order-sm-last col-md-3">
-                    <h3>Meet our Culinary Specialists</h3>
-                </div>
-                <div class="col col-sm order-sm-first col-md">
-                    <div class="media">
-                        <img src="./img/alberto.png" class="d-flex mr-3 img-thumbnail align-self-center" alt="Alberto Somayya">
-                        <div class="media-body">
-                            <h2 class="mt-0">Alberto Somayya</h2>
-                            <h4>Executive Chef</h4>
-                            <p class="d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> 
         </div>
         <footer class="footer">
             <div class="container">
                 <div class="row">             
-                    <div class="col-4 offset-1 col-sm-2">
-                        <h5>Links</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="./aboutus.html">About</a></li>
-                            <li><a href="#">Menu</a></li>
-                            <li><a href="./contactus.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-7 col-sm-5">
-                        <h5>Our Address</h5>
-                        <address class="address">
-                        121, Clear Water Bay Road<br>
-                        Clear Water Bay, Kowloon<br>
-                        HONG KONG<br>
-                        <i class="fa fa-phone fa-lg"></i> +852 1234 5678<br>
-                        <i class="fa fa-fax fa-lg"></i> +852 8765 4321<br>
-                        <i class="fa fa-envelope fa-lg"></i> <a href="mailto:confusion@food.net">confusion@food.net</a>
-                    </address>
-                    </div>
                     <div class="col-12 col-sm-4 align-self-center">
                         <div class="text-center">
                             <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
@@ -280,7 +213,7 @@
             </div>
             <div class="row justify-content-center">             
                     <div class="col-auto">
-                        <p>© Copyright 2018 Ristorante Con Fusion</p>
+                        <p>© Copyright 2021 The Awesome Car Reseller</p>
                     </div>
             </div>
             </div>
@@ -289,21 +222,7 @@
         <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('#mycarousel').carousel({interval: 2000});
-                $('#carouselButton').click(function() {
-                    if($('#carouselButton').children('span').hasClass('fa fa-pause')) {
-                        $('#carouselButton').children('span').removeClass('fa-pause').addClass('fa-play');
-                        $('#mycarousel').carousel('pause');
-                    }
-                    else if($('#carouselButton').children('span').hasClass('fa fa-play')) {
-                        $('#carouselButton').children('span').removeClass('fa-play').addClass('fa-pause');
-                        $('#mycarousel').carousel('cycle');
-                    }
-                });
-            })
-        </script>
+        <script src="./js/scripts.js"></script>
     </body>
 </html>
 

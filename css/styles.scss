@@ -1,10 +1,16 @@
 /* COLORS */
 $lt-gray: #ddd;
-$background-dark:#512DA8;
-$background-light:#9575CD;
-$background-pale:#D1C4E9;
+$background-dark:#0a4983;
+$background-light:#73b4e9;
+$background-pale:#c4dbe9;
+$lt-text:floralwhite;
 /* HEIGHT */
 $carousel-item-height:300px;
+$footer-height:100px;
+$nav-height:50px;
+
+
+
 /* MIXINS */
 @mixin zero-margin($pad-up-dn, $pad-left-right){
     margin: 0px;
@@ -12,8 +18,16 @@ $carousel-item-height:300px;
 }
 
 
+.content {
+    min-height: calc(100vh - 280px);
+}
+
+
 .row-header{
     @include zero-margin(0px,0px);
+    .header-img {
+        max-height: 50px;
+    }
 }
 
 .row-content {
@@ -25,12 +39,13 @@ $carousel-item-height:300px;
 .footer{
     background-color: $background-pale;
     @include zero-margin(20px, 0px);
+    height: $footer-height;
 }
 
 .jumbotron {
-    @include zero-margin(70px,30px);
+    @include zero-margin(20px,10px);
     background: $background-light ;
-    color:floralwhite;
+    color: $lt-text;
 }
 
 address{
@@ -58,13 +73,19 @@ body{
     background:$background-dark;
 
     .carousel-item {
-        height: $carousel-item-height;
+        /*height: $carousel-item-height;*/
         img {
-            position: absolute;
+            height: 100%;
+           /* position: absolute;
             top: 0;
             left: 0;
-            min-height: 300px;
+            min-height: 300px;*/
         }
+    }
+    .carousel-text {
+        min-height: 200px;
+        padding-left: 50px;
+        color: $lt-text;
     }
 }
 
@@ -73,4 +94,21 @@ body{
     position: absolute;
     bottom: 0px;
     z-index: 1;
+}
+
+.modal {
+    .modal-header {
+        background-color: $background-dark;
+        color: $lt-text;
+        .close {
+            color: $lt-text;
+        }
+    }
+    .modal-body {
+        background-color: $background-pale;
+    }
+}
+
+.calendar {
+    height: 200px;
 }
